@@ -2,7 +2,12 @@
 
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { ContactShadows, Float, Environment, Wireframe } from "@react-three/drei";
+import {
+  ContactShadows,
+  Float,
+  Environment,
+  Wireframe,
+} from "@react-three/drei";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -40,26 +45,26 @@ function Geometries() {
       geometry: new THREE.IcosahedronGeometry(3), //gem
     },
     {
-        position: [1, -0.75, 4],
-        r: 0.4,
-        geometry: new THREE.CapsuleGeometry(0.5, 1.6, 2, 16), // Pill
-      },
-      {
-        position: [-1.4, 2, -4],
-        r: 0.6,
-        geometry: new THREE.DodecahedronGeometry(1.5), // Soccer ball
-        Wireframe: true
-      },
-      {
-        position: [-0.8, -0.75, 5],
-        r: 0.5,
-        geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Donut
-      },
-      {
-        position: [1.6, 1.6, -4],
-        r: 0.7,
-        geometry: new THREE.OctahedronGeometry(1.5), // Diamond
-      },
+      position: [1, -0.75, 4],
+      r: 0.4,
+      geometry: new THREE.CapsuleGeometry(0.5, 1.6, 2, 16), // Pill
+    },
+    {
+      position: [-1.4, 2, -4],
+      r: 0.6,
+      geometry: new THREE.DodecahedronGeometry(1.5), // Soccer ball
+      Wireframe: true,
+    },
+    {
+      position: [-0.8, -0.75, 5],
+      r: 0.5,
+      geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Donut
+    },
+    {
+      position: [1.6, 1.6, -4],
+      r: 0.7,
+      geometry: new THREE.OctahedronGeometry(1.5), // Diamond
+    },
   ];
 
   const materials = [
@@ -69,29 +74,69 @@ function Geometries() {
     new THREE.MeshStandardMaterial({ color: 0xe74c3c, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({ color: 0x8e44ad, roughness: 0.2 }),
     new THREE.MeshStandardMaterial({ color: 0x1abc9c, roughness: 0.3 }),
-    new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.2 }),
-    new THREE.MeshStandardMaterial({ color: 0x6F73D2, roughness: 0.5 }),
-    new THREE.MeshStandardMaterial({ color: 0xB1F8F2, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({ color: 0xBA5A31, roughness: 0.6 }),
-    new THREE.MeshStandardMaterial({ color: 0x235789, roughness: 0.5 }),
-    new THREE.MeshStandardMaterial({ color: 0xF51AA4, roughness: 0.9 }),
+    new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 }),
+    new THREE.MeshStandardMaterial({ color: 0x6f73d2, roughness: 0.1 }),
+    new THREE.MeshStandardMaterial({ color: 0xb1f8f2, roughness: 0.1 }),
+    new THREE.MeshStandardMaterial({ color: 0xba5a31, roughness: 0.2 }),
+    new THREE.MeshStandardMaterial({ color: 0x235789, roughness: 0.1 }),
+    new THREE.MeshStandardMaterial({ color: 0xf51aa4, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({ color: 0x004346, roughness: 0.3 }),
-    new THREE.MeshStandardMaterial({ color: 0x172A3A, roughness: 0.4 }),
+    new THREE.MeshStandardMaterial({ color: 0x172a3a, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({ color: 0x086788, roughness: 0.3 }),
-    new THREE.MeshStandardMaterial({ color: 0x07A0C3, roughness: 0.5, metalness: 0.1}),
-    new THREE.MeshStandardMaterial({ color: 0x2F0A28, roughness: 0.8, metalness: 0.6}),
-    new THREE.MeshStandardMaterial({ color: 0xE2ADF2, roughness: 0.2, metalness: 0.2}),
-    new THREE.MeshStandardMaterial({ color: 0x574AE2, roughness: 0.5, metalness: 0.3}),
-    new THREE.MeshStandardMaterial({ color: 0x9799CA, roughness: 0.3, metalness: 0.1}),
-    new THREE.MeshStandardMaterial({ color: 0xE6F8B2, roughness: 0.2, metalness: 0.2}),
-    new THREE.MeshStandardMaterial({ color: 0x2980b9, roughness: 0.3, metalness: 0.3}),
-    new THREE.MeshStandardMaterial({ color: 0x2c3e50, roughness: 0.2, metalness: 0.6}),
-    ];
+    new THREE.MeshStandardMaterial({
+      color: 0x07a0c3,
+      roughness: 0.1,
+      metalness: 0.1,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x2f0a28,
+      roughness: 0.8,
+      metalness: 0.6,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0xe2adf2,
+      roughness: 0.2,
+      metalness: 0.2,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x574ae2,
+      roughness: 0.5,
+      metalness: 0.3,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x9799ca,
+      roughness: 0.3,
+      metalness: 0.1,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0xe6f8b2,
+      roughness: 0.2,
+      metalness: 0.2,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x2980b9,
+      roughness: 0.3,
+      metalness: 0.3,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x2c3e50,
+      roughness: 0.2,
+      metalness: 0.6,
+    }),
+  ];
+
+  const soundEffects = [
+    new Audio("/Sounds/impactBell_heavy.ogg"),
+    new Audio("/Sounds/impactMetal_medium.ogg"),
+    new Audio("/Sounds/impactMining.ogg"),
+    new Audio("/Sounds/impactWood_heavy.ogg"),
+  ];
 
   return geometries.map(({ position, r, geometry }) => (
     <Geometry
       key={JSON.stringify(position)} // Unique key
       position={position.map((p) => p * 2)}
+      soundEffects={soundEffects}
       geometry={geometry}
       materials={materials}
       r={r}
@@ -99,7 +144,7 @@ function Geometries() {
   ));
 }
 
-function Geometry({ r, position, geometry, materials }) {
+function Geometry({ r, position, geometry, materials, soundEffects }) {
   const meshRef = useRef();
   const [visible, setVisible] = useState(false);
 
@@ -112,13 +157,15 @@ function Geometry({ r, position, geometry, materials }) {
   function handleClick(e) {
     const mesh = e.object;
 
+    gsap.utils.random(soundEffects).play();
+
     gsap.to(mesh.rotation, {
       x: `+=${gsap.utils.random(0, 3)}`,
       y: `+=${gsap.utils.random(0, 3)}`,
       z: `+=${gsap.utils.random(0, 3)}`,
       duration: 1.3,
       ease: "elastic.out(1, 0.3)",
-      yoyo: true
+      yoyo: true,
     });
 
     mesh.material = getRandomMaterial();
