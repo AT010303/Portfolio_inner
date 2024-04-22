@@ -1,6 +1,7 @@
 import React from "react";
 import { createClient } from "@/prismicio";
 import Link from "next/link";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 export default async function Header(){
     const client = createClient();
@@ -15,7 +16,14 @@ export default async function Header(){
                             {settings.data.name}
                         </Link>
                     </li>
-                    <li></li>
+                    {settings.data.navitem.map(({link, lable}, index)=>(
+                        <li key={index}>
+                            <PrismicNextLink field={link}>
+                                {lable}
+                            </PrismicNextLink>
+                        </li>
+                    ))}
+                    
                 </ul>
             </nav>
         </header>
