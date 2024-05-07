@@ -26,7 +26,7 @@ export default function Model() {
         <Suspense fallback={null}>
           <Logos />
           <ContactShadows
-            position={[0, -7.5, 0]}
+            position={[0, -8, 0]}
             opacity={0.65}
             scale={40}
             blur={1}
