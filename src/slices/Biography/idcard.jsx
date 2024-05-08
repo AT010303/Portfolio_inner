@@ -26,7 +26,7 @@ useGLTF.preload("model/card.glb");
 useTexture.preload("model/band.png");
 
 export default function IdCard() {
-  //   const { debug } = useControls({ debug: false });
+  // const { debug } = useControls({ debug: true });
 
   return (
     <Canvas

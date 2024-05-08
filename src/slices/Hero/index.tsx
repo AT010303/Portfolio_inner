@@ -8,7 +8,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import Bounded from "@/components/Bounded";
 import Model from "./model";
-import Shape from "./Shape";
 
 /**
  * Props for `Hero`.
