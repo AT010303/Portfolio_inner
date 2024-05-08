@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-slate-900 text-slate-100">
-      
       <body className={urbanistinter.className}>
         <Header />
         {children}
+        <div className="h-[500vh]"></div>
       </body>
     </html>
   );
