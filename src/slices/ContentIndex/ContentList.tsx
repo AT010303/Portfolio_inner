@@ -51,7 +51,7 @@ export default function ContentList({
             stagger: 0.2,
             scrollTrigger: {
               trigger: item,
-              start: "top bottom-=150px",
+              start: "top bottom-=120px",
               end: "bottom center",
               toggleActions: "play none none none",
             },
@@ -102,8 +102,8 @@ export default function ContentList({
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [hovering, currentItem]);
-// ... items ke array to items se replace karna hai baad me niche bhi
-  const contentImages = [...items, ...items, ...items, ...items, ...items, ...items,].map((item) => {
+
+  const contentImages = items.map((item) => {
     const image = isFilled.image(item.data.hover_image)
       ? item.data.hover_image
       : fallbackItemImage;
@@ -114,6 +114,15 @@ export default function ContentList({
       exp: -10,
     });
   });
+
+  // Preload images
+  useEffect(() => {
+    contentImages.forEach((url) => {
+      if (!url) return;
+      const img = new Image();
+      img.src = url;
+    });
+  }, [contentImages]);
 
   const onMouseEnter = (index: number) => {
     setCurrentItem(index);
@@ -131,7 +140,7 @@ export default function ContentList({
         className="grid border-b border-b-slate-100"
         onMouseLeave={onMouseLeave}
       >
-        {[...items, ...items, ...items, ...items, ...items, ...items,].map((item, index) => (
+        {items.map((item, index) => (
           <>
             {isFilled.keyText(item.data.title) && (
               <li
