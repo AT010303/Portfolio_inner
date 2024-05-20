@@ -18,7 +18,7 @@ export default function Model() {
       <Canvas
         className="z-0"
         shadows={true}
-        gl={{ antialias: false }}
+        gl={{ antialias: true }}
         dpr={[1, 2]}
         camera={{ position: [0, 0, 35], fov: 30, near: 1, far: 50 }}
         legacy={true}
