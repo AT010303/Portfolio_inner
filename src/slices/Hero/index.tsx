@@ -40,7 +40,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           transformOrigin: "left top",
           delay: 0.5,
           stagger: { each: 0.1, from: "random" },
-        }
+        },
       );
 
       tl.fromTo(
@@ -55,7 +55,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           opacity: 1,
           scale: 1,
           ease: "elastic.out(1,0.3)",
-        }
+        },
       );
     }, component);
     return () => ctx.revert();

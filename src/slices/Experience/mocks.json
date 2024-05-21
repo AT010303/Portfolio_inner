@@ -1,58 +1,58 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "afraid",
-				"type": "Text"
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "rocket",
-							"type": "Text"
-						}
-					],
-					[
-						"time_period",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "bread",
-							"type": "Text"
-						}
-					],
-					[
-						"institutuion",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "southern",
-							"type": "Text"
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Laboris est adipisicing nulla nulla adipisicing sit cupidatat id voluptate sunt id nisi pariatur quis. Voluptate enim eiusmod ipsum culpa."
-									}
-								}
-							]
-						}
-					]
-				]
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "FieldContent",
+        "value": "afraid",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "rocket",
+              "type": "Text"
+            }
+          ],
+          [
+            "time_period",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "bread",
+              "type": "Text"
+            }
+          ],
+          [
+            "institutuion",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "southern",
+              "type": "Text"
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Laboris est adipisicing nulla nulla adipisicing sit cupidatat id voluptate sunt id nisi pariatur quis. Voluptate enim eiusmod ipsum culpa."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
 ]
