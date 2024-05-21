@@ -82,7 +82,7 @@ export default function ContentList({
             rotation: speed * (mousePos.x > lastMousePos.current.x ? 1 : -1), // Apply rotation based on speed and direction
             ease: "back.out(2)",
             duration: 1.3,
-            opacity: 1
+            opacity: 1,
           });
           gsap.to(revealRef.current, {
             opacity: hovering ? 1 : 0,
@@ -145,8 +145,10 @@ export default function ContentList({
             {isFilled.keyText(item.data.title) && (
               <li
                 key={index}
-                ref={(el)=>{itemsRef.current[index] = el}}
-                className="list-item opacity-0f"
+                ref={(el) => {
+                  itemsRef.current[index] = el;
+                }}
+                className="list-item opacity-0"
                 onMouseEnter={() => onMouseEnter(index)}
               >
                 <Link
@@ -158,7 +160,7 @@ export default function ContentList({
                     <span className="text-3xl font-bold">
                       {item.data.title}
                     </span>
-                    <div className="flex gap-3 text-yellow-400 text-lg font-bold">
+                    <div className="flex gap-3 text-lg font-bold text-yellow-400">
                       {item.tags.map((tag, index) => (
                         <span key={index}>{tag}</span>
                       ))}
