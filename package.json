@@ -25,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "three": "^0.163.0"
   },
   "devDependencies": {

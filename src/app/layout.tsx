@@ -29,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-slate-900">
-      <body className={clsx(urbanist.className, "relative min-h-screen")}>
+    <html lang="en" className="bg-slate-900 scrollbar-hide">
+      <body className={clsx(urbanist.className, "relative min-h-screen ")}>
         <Header />
         {children}
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />

@@ -8,6 +8,6 @@ const config: Config = {
     "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {},
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require('tailwind-scrollbar-hide')],
 };
 export default config;
