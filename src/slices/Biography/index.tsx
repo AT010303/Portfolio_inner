@@ -31,10 +31,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           linkField={slice.primary.button_link}
           label={slice.primary.button_text}
         />
-        {/* <Avatar
-          image={slice.primary.avatar}
-          className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"
-        /> */}
         <div className="row-start-1  md:col-start-2 md:row-end-3">
           <IdCard />
         </div>

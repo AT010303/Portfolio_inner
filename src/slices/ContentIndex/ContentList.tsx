@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
-  items: Content.BlogPostDocument[] | Content.ProjectDocument[];
+  items: Content.GraphicsDocument[] | Content.ProjectDocument[];
   contentType: Content.ContentIndexSlice["primary"]["content_type"];
   fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
   viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
@@ -31,7 +31,7 @@ export default function ContentList({
 
   const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Blog" ? "/blog" : "/projects";
+  const urlPrefix = contentType === "graphics" ? "/graphics" : "/projects";
 
   useEffect(() => {
     // Animate list-items in with a stagger

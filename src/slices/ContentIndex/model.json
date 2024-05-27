@@ -24,7 +24,10 @@
           "config": {
             "label": "Content Type",
             "placeholder": "",
-            "options": ["Blog", "Project"]
+            "options": [
+              "Project",
+              "graphics"
+            ]
           }
         },
         "description": {

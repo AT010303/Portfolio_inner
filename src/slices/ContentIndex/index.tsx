@@ -17,12 +17,12 @@ const ContentIndex = async ({
   slice,
 }: ContentIndexProps): Promise<JSX.Element> => {
   const client = createClient();
-  const blogPosts = await client.getAllByType("blog_post");
+  const graphics = await client.getAllByType("graphics")
   const projects = await client.getAllByType("project");
 
-  const contentType = slice.primary.content_type || "Blog";
+  const contentType = slice.primary.content_type || "graphics";
 
-  const items = contentType === "Blog" ? blogPosts : projects;
+  const items = contentType === "graphics" ? graphics : projects;
 
   return (
     <Bounded

@@ -42,14 +42,6 @@
             "placeholder": "",
             "select": null
           }
-        },
-        "avatar": {
-          "type": "Image",
-          "config": {
-            "label": "Avatar",
-            "constraint": {},
-            "thumbnails": []
-          }
         }
       },
       "items": {}

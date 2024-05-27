@@ -9,7 +9,7 @@ import { formatDate } from "@/utils/formatDate";
 export default function ContentBody({
   page,
 }: {
-  page: Content.BlogPostDocument | Content.ProjectDocument;
+  page: Content.GraphicsDocument | Content.ProjectDocument;
 }) {
   const formattedDate = formatDate(page.data.date);
   return (

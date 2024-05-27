@@ -4,82 +4,82 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type GraphicsDocumentDataSlicesSlice = TextBlockSlice;
 
 /**
- * Content for Blog Post documents
+ * Content for Graphics documents
  */
-interface BlogPostDocumentData {
+interface GraphicsDocumentData {
   /**
-   * Title field in *Blog Post*
+   * Title field in *Graphics*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.title
+   * - **API ID Path**: graphics.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
 
   /**
-   * Date field in *Blog Post*
+   * Date field in *Graphics*
    *
    * - **Field Type**: Date
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.date
+   * - **API ID Path**: graphics.date
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#date
    */
   date: prismic.DateField;
 
   /**
-   * Hover Image field in *Blog Post*
+   * Hover Image field in *Graphics*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.hover_image
+   * - **API ID Path**: graphics.hover_image
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hover_image: prismic.ImageField<never>;
 
   /**
-   * Slice Zone field in *Blog Post*
+   * Slice Zone field in *Graphics*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.slices[]
+   * - **API ID Path**: graphics.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
-   * Meta Description field in *Blog Post*
+  slices: prismic.SliceZone<GraphicsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Graphics*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: blog_post.meta_description
+   * - **API ID Path**: graphics.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Blog Post*
+   * Meta Image field in *Graphics*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_image
+   * - **API ID Path**: graphics.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Blog Post*
+   * Meta Title field in *Graphics*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_post.meta_title
+   * - **API ID Path**: graphics.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -87,18 +87,18 @@ interface BlogPostDocumentData {
 }
 
 /**
- * Blog Post document from Prismic
+ * Graphics document from Prismic
  *
- * - **API ID**: `blog_post`
+ * - **API ID**: `graphics`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BlogPostDocument<Lang extends string = string> =
+export type GraphicsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
-    Simplify<BlogPostDocumentData>,
-    "blog_post",
+    Simplify<GraphicsDocumentData>,
+    "graphics",
     Lang
   >;
 
@@ -485,7 +485,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  | BlogPostDocument
+  | GraphicsDocument
   | HomepageDocument
   | PageDocument
   | ProjectDocument
@@ -534,16 +534,6 @@ export interface BiographySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
-
-  /**
-   * Avatar field in *Biography → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: biography.primary.avatar
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  avatar: prismic.ImageField<never>;
 }
 
 /**
@@ -598,7 +588,7 @@ export interface ContentIndexSliceDefaultPrimary {
    * - **API ID Path**: content_index.primary.content_type
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  content_type: prismic.SelectField<"Blog" | "Project">;
+  content_type: prismic.SelectField<"Project" | "graphics">;
 
   /**
    * Description field in *ContentIndex → Primary*
@@ -983,9 +973,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      BlogPostDocument,
-      BlogPostDocumentData,
-      BlogPostDocumentDataSlicesSlice,
+      GraphicsDocument,
+      GraphicsDocumentData,
+      GraphicsDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
