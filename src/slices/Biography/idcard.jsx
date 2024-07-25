@@ -1,3 +1,4 @@
+//refrence: https://vercel.com/blog/building-an-interactive-3d-event-badge-with-react-three-fiber
 "use client";
 
 import * as THREE from "three";
@@ -19,15 +20,10 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useControls } from "leva";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload("model/card.glb");
-useTexture.preload("model/band.png");
 
 export default function IdCard() {
-  // const { debug } = useControls({ debug: true });
-
   return (
     <Canvas
       camera={{ position: [0, 0, 13], fov: 25 }}
@@ -37,17 +33,16 @@ export default function IdCard() {
     >
       <ambientLight intensity={Math.PI} />
       <Physics
-        // debug={debug}
         interpolate
-        gravity={[0, -40, 0]}
+        gravity={[0, -30, 0]}
         timeStep={1 / 60}
       >
         <Band />
       </Physics>
       <ContactShadows
-        position={[0, -2, 0]}
-        opacity={0.8}
-        scale={50}
+        position={[0, -2.8, 0]}
+        opacity={0.7}
+        scale={70}
         blur={0.3}
         far={6}
       />
@@ -178,10 +173,12 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   curve.curveType = "chordal";
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  const isMobile = window.innerWidth < 768;
+  // console.log(dragged);
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={isMobile ? [0, 4, 0] : [3, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -250,3 +247,5 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     </>
   );
 }
+useGLTF.preload("model/card.glb");
+useTexture.preload("model/band.png");
